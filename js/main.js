@@ -72,6 +72,37 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
+    // Mobile Menu Closure & Backdrop logic
+    const navbarCollapse = document.getElementById('navbarNav');
+    const bsCollapse = navbarCollapse ? new bootstrap.Collapse(navbarCollapse, { toggle: false }) : null;
+    
+    if (navbarCollapse) {
+        // Handle click on backdrop (the collapse element itself)
+        navbarCollapse.addEventListener('click', (e) => {
+            if (e.target === navbarCollapse) {
+                bsCollapse.hide();
+            }
+        });
+
+        // Close menu on link click (useful for one-page navigation)
+        navbarCollapse.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+                if (window.innerWidth <= 1100) {
+                    bsCollapse.hide();
+                }
+            });
+        });
+
+        // Handle body scroll locking
+        navbarCollapse.addEventListener('show.bs.collapse', () => {
+            document.body.style.overflow = 'hidden';
+        });
+
+        navbarCollapse.addEventListener('hidden.bs.collapse', () => {
+            document.body.style.overflow = '';
+        });
+    }
+
     // Intersection Observer for animations
     const observerOptions = {
         threshold: 0.1

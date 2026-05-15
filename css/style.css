@@ -332,6 +332,14 @@ h1, h2, h3, h4, h5, h6 {
     flex-direction: column;
 }
 
+.glass-card.text-center {
+    align-items: center;
+}
+
+.glass-card.text-center .d-flex {
+    justify-content: center;
+}
+
 .glass-card > .mt-auto,
 .glass-card .p-4 > .mt-auto {
     margin-top: auto;
@@ -684,7 +692,17 @@ h1, h2, h3, h4, h5, h6 {
     margin-right: 280px;
 }
 
-@media (max-width: 992px) {
+.dashboard-mobile-header {
+    display: none !important;
+}
+
+@media (max-width: 1100px) {
+    .dashboard-mobile-header {
+        display: flex !important;
+    }
+}
+
+@media (max-width: 1100px) {
     .sidebar {
         transform: translateX(-100%);
     }
@@ -950,4 +968,238 @@ footer, .footer {
 
 [data-theme="dark"] .bg-white .text-muted {
     color: var(--text-muted) !important;
+}
+/* Mobile Navigation (Up to 1100px) */
+@media (max-width: 1100px) {
+    .navbar-expand-lg .navbar-toggler {
+        display: block;
+    }
+
+    .navbar-expand-lg .navbar-collapse {
+        display: flex !important;
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 300px;
+        height: 100vh;
+        background: var(--bg-card);
+        flex-direction: column;
+        padding: 80px 1.5rem 2rem;
+        transition: var(--transition);
+        z-index: 1050;
+        box-shadow: -10px 0 30px rgba(0,0,0,0.1);
+        overflow-y: auto;
+        visibility: hidden;
+    }
+
+    .navbar-expand-lg .navbar-collapse.show {
+        right: 0;
+        visibility: visible;
+    }
+
+    .navbar-expand-lg .navbar-collapse::before {
+        content: '';
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background: rgba(15, 23, 42, 0.5);
+        backdrop-filter: blur(4px);
+        z-index: -1;
+        opacity: 0;
+        visibility: hidden;
+        transition: var(--transition);
+    }
+
+    .navbar-expand-lg .navbar-collapse.show::before {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .navbar-expand-lg .navbar-nav {
+        width: 100%;
+        align-items: flex-start !important;
+        margin-bottom: 2rem;
+    }
+
+    .navbar-expand-lg .nav-item {
+        width: 100%;
+        margin-bottom: 0.5rem;
+    }
+
+    .navbar-expand-lg .nav-link {
+        padding: 0.75rem 0 !important;
+        font-size: 1rem;
+        border-bottom: 1px solid var(--glass-border);
+        width: 100%;
+        display: block;
+    }
+
+    .navbar-expand-lg .nav-link:hover {
+        transform: translateX(10px);
+    }
+
+    .navbar-expand-lg .nav-link::after {
+        display: none;
+    }
+
+    .navbar-expand-lg .nav-item.ms-lg-3 {
+        margin-left: 0 !important;
+        margin-top: 1.5rem;
+        width: 100%;
+        display: flex;
+        flex-direction: row !important;
+        flex-wrap: wrap;
+        gap: 1rem;
+        justify-content: flex-start;
+        align-items: center;
+    }
+
+    .navbar-expand-lg .nav-item.ms-lg-3 .btn,
+    .navbar-expand-lg .nav-item.ms-lg-3 button {
+        flex: 1 1 auto;
+        min-width: 120px;
+        margin: 0;
+    }
+
+    /* Theme and RTL toggle specific sizing */
+    .navbar-expand-lg #theme-toggle,
+    .navbar-expand-lg #rtl-toggle {
+        flex: 0 0 42px;
+        min-width: 42px;
+    }
+    
+    .navbar-expand-lg #rtl-toggle {
+        flex: 0 0 auto;
+        min-width: 60px;
+    }
+
+    .mobile-close-btn {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        background: var(--glass-bg);
+        border: 1px solid var(--glass-border);
+        width: 40px;
+        height: 40px;
+        border-radius: 10px;
+        display: flex !important;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.2rem;
+        color: var(--text-main);
+        cursor: pointer;
+        z-index: 1060;
+        transition: var(--transition);
+    }
+
+    .mobile-close-btn:hover {
+        background: var(--primary-color);
+        color: white;
+        border-color: var(--primary-color);
+        transform: rotate(90deg);
+    }
+
+    /* Active Link Highlighting for Mobile */
+    .navbar-expand-lg .nav-link.active {
+        color: var(--primary-color) !important;
+        background: rgba(0, 97, 255, 0.05);
+        padding-left: 1rem !important;
+        border-radius: 8px;
+        border-left: 3px solid var(--primary-color);
+    }
+
+    /* Override Bootstrap expansion */
+    .navbar-expand-lg .navbar-nav .nav-link {
+        padding-right: 0;
+        padding-left: 0;
+    }
+}
+
+/* Hide mobile-only elements above 1100px */
+@media (min-width: 1101px) {
+    .mobile-close-btn {
+        display: none !important;
+    }
+}
+
+/* Force collapse until 1100px */
+@media (min-width: 992px) and (max-width: 1100px) {
+    .navbar-expand-lg .navbar-toggler {
+        display: block;
+    }
+    
+    .navbar-expand-lg .navbar-collapse:not(.show) {
+        display: none !important;
+    }
+    
+    .navbar-expand-lg .navbar-nav {
+        flex-direction: column;
+    }
+}
+
+/* Expanded state (Above 1100px) */
+@media (min-width: 1101px) {
+    .navbar-expand-lg .navbar-toggler {
+        display: none;
+    }
+    
+    .navbar-expand-lg .navbar-collapse {
+        display: flex !important;
+        position: static;
+        width: auto;
+        height: auto;
+        background: transparent;
+        padding: 0;
+        box-shadow: none;
+        flex-direction: row;
+        visibility: visible;
+        right: auto;
+    }
+
+    .navbar-expand-lg .navbar-nav {
+        flex-direction: row;
+    }
+}
+
+/* Vertical Button Stacking for Mobile */
+@media (max-width: 768px) {
+    /* Target flexible containers that hold multiple buttons */
+    .d-flex.gap-2:has(.btn), 
+    .d-flex.gap-3:has(.btn), 
+    .d-flex.gap-4:has(.btn) {
+        flex-direction: column !important;
+        align-items: stretch !important;
+    }
+
+    /* Hero buttons adjustment */
+    .hero-content .d-flex {
+        flex-direction: column !important;
+        gap: 1rem !important;
+    }
+
+    /* Newsletter form adjustment */
+    form.d-flex {
+        flex-direction: column !important;
+    }
+
+    form.d-flex .form-control {
+        margin-bottom: 1rem;
+        width: 100% !important;
+    }
+
+    /* Ensure buttons take full width when stacked */
+    .btn, .btn-lg, .btn-sm {
+        width: 100% !important;
+        margin-right: 0 !important;
+        margin-left: 0 !important;
+    }
+
+    /* Pricing/Card actions stacking */
+    .glass-card .d-flex:has(.btn),
+    .bento-item .d-flex:has(.btn) {
+        flex-direction: column !important;
+        gap: 0.75rem !important;
+    }
 }

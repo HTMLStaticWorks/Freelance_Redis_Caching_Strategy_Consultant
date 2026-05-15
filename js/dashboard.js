@@ -189,7 +189,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 });
 
                 // Close sidebar on mobile after clicking
-                if (window.innerWidth <= 992) {
+                if (window.innerWidth <= 1100) {
                     sidebar.classList.remove('show');
                     sidebarToggle.querySelector('i').classList.replace('fa-times', 'fa-bars');
                 }
@@ -335,7 +335,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Close sidebar when clicking outside on mobile
     document.addEventListener('click', (e) => {
-        if (window.innerWidth <= 992 && 
+        if (window.innerWidth <= 1100 && 
             sidebar.classList.contains('show') && 
             !sidebar.contains(e.target) && 
             !sidebarToggle.contains(e.target)) {
