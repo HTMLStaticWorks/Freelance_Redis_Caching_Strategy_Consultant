@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Velocis - Freelance Redis Caching Strategy Consultant. Expert Redis optimization, cluster configuration, and memory management for dev teams.">
+    <meta name="keywords"
+        content="Redis Consultant, Caching Strategy, Redis Optimization, Memory Management, Redis Cluster, Cache Invalidation">
+    <meta name="author" content="Velocis">
+    <title>Velocis | Redis Caching Strategy Consultant</title>
+    <link rel="icon" type="image/png" href="assets/favicon.png">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg fixed-top py-3">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center" href="index.html">
+                <img src="assets/logo.png" alt="Velocis Logo" height="30" class="d-inline-block align-text-top me-2">
+            </a>
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto align-items-center">
+                    <li class="nav-item"><a class="nav-link px-3 active" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link px-3" href="index-alt.html">Home 2</a></li>
+                    <li class="nav-item"><a class="nav-link px-3" href="about.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link px-3" href="services.html">Services</a></li>
+                    <li class="nav-item"><a class="nav-link px-3" href="portfolio.html">Portfolio</a></li>
+                    <li class="nav-item"><a class="nav-link px-3" href="contact.html">Contact</a></li>
+                    <li class="nav-item ms-lg-3 d-flex gap-2">
+                        <button id="theme-toggle" title="Toggle Theme">
+                            <i class="fas fa-moon"></i>
+                        </button>
+                        <button id="rtl-toggle" class="btn btn-outline-secondary btn-sm">RTL</button>
+                    </li>
+                    <li class="nav-item ms-lg-3 d-flex gap-2">
+                        <a href="login.html" class="btn btn-outline-primary">Login</a>
+                        <a href="dashboard.html" class="btn btn-premium">Dashboard</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero-section">
+        <img src="assets/home_hero.jpg" alt="Tech Background" class="hero-bg-image">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 hero-content">
+                    <span class="badge bg-primary-subtle text-primary mb-3 px-3 py-2 rounded-pill">Expert Redis
+                        Optimization</span>
+                    <h1 class="hero-title">Eliminate Latency with Precision <span class="text-primary">Caching
+                            Strategies</span></h1>
+                    <p class="lead mb-4 opacity-75">I help high-growth engineering teams master Redis. From cache
+                        invalidation patterns to cluster scaling, I build the foundation for millisecond response times.
+                    </p>
+                    <div class="d-flex gap-3">
+                        <a href="services.html" class="btn btn-premium btn-lg">View Solutions</a>
+                        <a href="portfolio.html" class="btn btn-outline-primary btn-lg">See Case Studies</a>
+                    </div>
+                    <div class="mt-5 d-flex align-items-center gap-4 opacity-50">
+                        <small>TRUSTED BY DEV TEAMS AT</small>
+                        <div class="d-flex gap-3">
+                            <i class="fab fa-aws fa-2x"></i>
+                            <i class="fab fa-google-cloud fa-2x"></i>
+                            <i class="fab fa-digital-ocean fa-2x"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 d-none d-lg-block">
+                    <div class="glass-card text-center p-5">
+                        <div class="mb-4">
+                            <i class="fas fa-bolt text-primary fa-4x mb-3"></i>
+                            <h3 class="h4">99.9% Cache Hit Ratio</h3>
+                            <p class="small text-muted">Achieved for Fortune 500 Fintech platforms</p>
+                        </div>
+                        <div class="chart-container mb-3">
+                            <!-- Simple SVG Visualization -->
+                            <svg width="200" height="100" viewBox="0 0 200 100">
+                                <path d="M10,80 Q50,20 100,50 T190,10" fill="none" stroke="var(--primary-color)"
+                                    stroke-width="4" />
+                                <circle cx="190" cy="10" r="5" fill="var(--primary-color)" />
+                            </svg>
+                        </div>
+                        <div class="d-flex justify-content-between text-start">
+                            <div>
+                                <h5 class="mb-0">45%</h5>
+                                <small class="text-muted">Memory Saved</small>
+                            </div>
+                            <div>
+                                <h5 class="mb-0">200ms</h5>
+                                <small class="text-muted">Latency Cut</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Expertise Section -->
+    <section class="py-5 bg-light-subtle">
+        <div class="container py-5">
+            <div class="text-center mb-5 section-title">
+                <h2 class="h1">Engineering Caching Excellence</h2>
+                <p class="text-muted mx-auto" style="max-width: 600px;">Stop guessing. Use data-driven strategies to
+                    optimize your Redis infrastructure.</p>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="glass-card h-100 hover-zoom">
+                        <img src="assets/service_audit.jpg" alt="Memory Optimization" class="img-fluid rounded-4 mb-3" style="height: 150px; object-fit: cover;">
+                        <i class="fas fa-microchip text-primary fa-2x mb-3"></i>
+                        <h3>Memory Optimization</h3>
+                        <p class="text-muted">Advanced data structure selection (Hashes vs Sets) to reduce memory
+                            footprint by up to 60%.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="glass-card h-100 hover-zoom">
+                        <img src="assets/service_cluster.jpg" alt="Cluster Architecture" class="img-fluid rounded-4 mb-3" style="height: 150px; object-fit: cover;">
+                        <i class="fas fa-network-wired text-primary fa-2x mb-3"></i>
+                        <h3>Cluster Architecture</h3>
+                        <p class="text-muted">Seamless scaling with custom sharding strategies and failover protocols
+                            for 100% uptime.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="glass-card h-100 hover-zoom">
+                        <img src="assets/about_hero.jpg" alt="Invalidation Patterns" class="img-fluid rounded-4 mb-3" style="height: 150px; object-fit: cover;">
+                        <i class="fas fa-shield-halved text-primary fa-2x mb-3"></i>
+                        <h3>Invalidation Patterns</h3>
+                        <p class="text-muted">Solving the hardest problem in CS: Cache consistency through event-driven
+                            invalidation.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-5">
+        <div class="container py-5">
+            <div class="glass-card bg-primary text-white p-5 text-center overflow-hidden position-relative image-overlay bg-img"
+                style="background-image: url('assets/portfolio_3.jpg');">
+                <div class="position-relative z-2">
+                    <h2 class="h1 mb-4">Ready to Optimize Your Stack?</h2>
+                    <p class="lead mb-4 opacity-75">Get a comprehensive Redis health check and strategy roadmap.</p>
+                    <a href="contact.html" class="btn btn-light btn-lg px-5 py-3">Start Consultation</a>
+                </div>
+                <!-- Background decor -->
+                <div class="position-absolute top-0 start-0 w-100 h-100 opacity-10"
+                    style="background: radial-gradient(circle at 30% 30%, white 0%, transparent 70%);"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Section -->
+    <section class="py-5 bg-light-subtle">
+        <div class="container py-5">
+            <div class="text-center mb-5 section-title">
+                <h2 class="h1">How We Work</h2>
+                <p class="text-muted mx-auto" style="max-width: 600px;">A systematic approach to identifying bottlenecks
+                    and implementing high-performance solutions.</p>
+            </div>
+            <div class="row g-4 justify-content-center">
+                <div class="col-md-3 text-center">
+                    <div class="bg-primary text-white rounded-circle d-inline-flex align-items-center justify-content-center mb-3"
+                        style="width: 60px; height: 60px; font-size: 1.5rem; font-weight: 800;">1</div>
+                    <h4>Audit</h4>
+                    <p class="text-muted small">Deep-dive into your current Redis metrics and architecture.</p>
+                </div>
+                <div class="col-md-3 text-center">
+                    <div class="bg-primary text-white rounded-circle d-inline-flex align-items-center justify-content-center mb-3"
+                        style="width: 60px; height: 60px; font-size: 1.5rem; font-weight: 800;">2</div>
+                    <h4>Strategy</h4>
+                    <p class="text-muted small">Custom caching roadmap tailored to your specific scale.</p>
+                </div>
+                <div class="col-md-3 text-center">
+                    <div class="bg-primary text-white rounded-circle d-inline-flex align-items-center justify-content-center mb-3"
+                        style="width: 60px; height: 60px; font-size: 1.5rem; font-weight: 800;">3</div>
+                    <h4>Execute</h4>
+                    <p class="text-muted small">Implementation of sharding, invalidation, and memory fixes.</p>
+                </div>
+                <div class="col-md-3 text-center">
+                    <div class="bg-primary text-white rounded-circle d-inline-flex align-items-center justify-content-center mb-3"
+                        style="width: 60px; height: 60px; font-size: 1.5rem; font-weight: 800;">4</div>
+                    <h4>Scale</h4>
+                    <p class="text-muted small">Ongoing performance monitoring and cluster expansion.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="py-5">
+        <div class="container py-5">
+            <div class="text-center mb-5 section-title">
+                <h2 class="h1">Trusted by Engineering Leaders</h2>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="glass-card h-100">
+                        <div class="d-flex gap-2 text-warning mb-3">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                class="fas fa-star"></i><i class="fas fa-star"></i>
+                        </div>
+                        <p class="mb-4">"Velocis transformed our caching layer. We saw a 40% reduction in database load
+                            within the first week."</p>
+                        <div class="d-flex align-items-center gap-3">
+                            <img src="assets/sarah.jpg" alt="Sarah Chen" class="avatar-img">
+                            <div>
+                                <h6 class="mb-0">Sarah Chen</h6>
+                                <small class="text-muted">CTO at FinStream</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="glass-card h-100">
+                        <div class="d-flex gap-2 text-warning mb-3">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                class="fas fa-star"></i><i class="fas fa-star"></i>
+                        </div>
+                        <p class="mb-4">"The cluster configuration provided was flawless. Zero downtime during the
+                            entire migration process."</p>
+                        <div class="d-flex align-items-center gap-3">
+                            <img src="assets/marcus.jpg" alt="Marcus Thorne" class="avatar-img">
+                            <div>
+                                <h6 class="mb-0">Marcus Thorne</h6>
+                                <small class="text-muted">VP Engineering at CloudScale</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="glass-card h-100">
+                        <div class="d-flex gap-2 text-warning mb-3">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                class="fas fa-star"></i><i class="fas fa-star"></i>
+                        </div>
+                        <p class="mb-4">"Expert-level knowledge on Redis invalidation. Finally solved our consistency
+                            issues."</p>
+                        <div class="d-flex align-items-center gap-3">
+                            <img src="assets/elena.jpg" alt="Elena Rodriguez" class="avatar-img">
+                            <div>
+                                <h6 class="mb-0">Elena Rodriguez</h6>
+                                <small class="text-muted">Backend Lead at ShopFast</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section class="py-5 bg-light-subtle">
+        <div class="container py-5">
+            <div class="text-center mb-5 section-title">
+                <h2 class="h1">Consultation Plans</h2>
+                <p class="text-muted mx-auto" style="max-width: 600px;">Transparent pricing for engineering teams of all
+                    sizes.</p>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="glass-card h-100 text-center">
+                        <h4>Health Check</h4>
+                        <div class="display-5 fw-bold my-3">$2,500</div>
+                        <ul class="list-unstyled mb-4 text-start">
+                            <li><i class="fas fa-check text-success me-2"></i> Performance Audit</li>
+                            <li><i class="fas fa-check text-success me-2"></i> Bottleneck Report</li>
+                            <li><i class="fas fa-check text-success me-2"></i> Basic Optimization</li>
+                        </ul>
+                        <a href="contact.html" class="btn btn-outline-primary w-100">Get Started</a>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="glass-card h-100 text-center border-primary shadow">
+                        <span class="badge bg-primary mb-2">MOST POPULAR</span>
+                        <h4>Strategic Scale</h4>
+                        <div class="display-5 fw-bold my-3">$5,000</div>
+                        <ul class="list-unstyled mb-4 text-start">
+                            <li><i class="fas fa-check text-success me-2"></i> Full Cluster Config</li>
+                            <li><i class="fas fa-check text-success me-2"></i> Sharding Strategy</li>
+                            <li><i class="fas fa-check text-success me-2"></i> Invalidation Setup</li>
+                            <li><i class="fas fa-check text-success me-2"></i> 1 Month Support</li>
+                        </ul>
+                        <a href="contact.html" class="btn btn-premium w-100">Go Premium</a>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="glass-card h-100 text-center">
+                        <h4>Enterprise</h4>
+                        <div class="display-5 fw-bold my-3">Custom</div>
+                        <ul class="list-unstyled mb-4 text-start">
+                            <li><i class="fas fa-check text-success me-2"></i> Multi-region Setup</li>
+                            <li><i class="fas fa-check text-success me-2"></i> Custom Modules</li>
+                            <li><i class="fas fa-check text-success me-2"></i> 24/7 Priority Access</li>
+                        </ul>
+                        <a href="contact.html" class="btn btn-outline-primary w-100">Inquire Now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-5">
+        <div class="container py-5">
+            <div class="text-center mb-5 section-title">
+                <h2 class="h1">Common Questions</h2>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="accordion accordion-flush" id="faqAccordion">
+                        <div class="accordion-item bg-transparent">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed bg-transparent fw-bold" type="button"
+                                    data-bs-toggle="collapse" data-bs-target="#faq1">
+                                    How quickly can we see performance improvements?
+                                </button>
+                            </h2>
+                            <div id="faq1" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body text-muted">
+                                    Most teams see significant latency reduction within the first 48-72 hours of
+                                    implementing our initial optimization recommendations.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item bg-transparent">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed bg-transparent fw-bold" type="button"
+                                    data-bs-toggle="collapse" data-bs-target="#faq2">
+                                    Do you support Redis Cluster and Sentinel?
+                                </button>
+                            </h2>
+                            <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body text-muted">
+                                    Yes, we specialize in both high-availability architectures, including complex
+                                    sharding and failover configurations.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="py-5 bg-primary text-white">
+        <div class="container py-5">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <h2 class="h1 mb-3">Redis Insights Weekly</h2>
+                    <p class="opacity-75 mb-0">Join 5,000+ engineers receiving caching tips and Redis optimization
+                        deep-dives.</p>
+                </div>
+                <div class="col-lg-6">
+                    <form class="d-flex gap-2 mt-4 mt-lg-0">
+                        <input type="email" class="form-control form-control-lg rounded-pill px-4"
+                            placeholder="Enter your email">
+                        <button type="submit" class="btn btn-light btn-lg px-4">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row g-4 mb-5">
+                <div class="col-lg-4">
+                    <a class="navbar-brand mb-3 d-flex align-items-center" href="index.html">
+                        <img src="assets/logo.png" alt="Velocis Logo" height="30" class="me-2">
+                    </a>
+                    <p class="text-muted">High-performance Redis caching strategies for modern engineering teams.
+                        Scalable, consistent, and cost-effective.</p>
+                    <div class="d-flex gap-3">
+                        <a href="#" class="text-primary"><i class="fab fa-linkedin fa-lg"></i></a>
+                        <a href="#" class="text-primary"><i class="fab fa-github fa-lg"></i></a>
+                        <a href="#" class="text-primary"><i class="fab fa-twitter fa-lg"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 offset-lg-1">
+                    <h5>Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="index.html" class="text-decoration-none text-muted">Home</a></li>
+                        <li><a href="about.html" class="text-decoration-none text-muted">About</a></li>
+                        <li><a href="services.html" class="text-decoration-none text-muted">Services</a></li>
+                        <li><a href="portfolio.html" class="text-decoration-none text-muted">Portfolio</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2">
+                    <h5>Platform</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="dashboard.html" class="text-decoration-none text-muted">Dashboard</a></li>
+                        <li><a href="login.html" class="text-decoration-none text-muted">Login</a></li>
+                        <li><a href="signup.html" class="text-decoration-none text-muted">Sign Up</a></li>
+                        <li><a href="contact.html" class="text-decoration-none text-muted">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3">
+                    <h5>Contact</h5>
+                    <ul class="list-unstyled">
+                        <li class="text-muted mb-2"><i class="fas fa-envelope me-2"></i> hello@velocis.io</li>
+                        <li class="text-muted mb-2"><i class="fas fa-location-dot me-2"></i> Remote | Worldwide</li>
+                    </ul>
+                </div>
+            </div>
+            <hr>
+            <div class="text-center text-muted pt-4">
+                <small>&copy; 2026 Velocis. All rights reserved. Designed for performance.</small>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap 5 JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script src="js/main.js"></script>
+</body>
+
+</html>

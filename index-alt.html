@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Velocis - Redis Performance Dashboard & Consulting. Real-time caching insights for modern dev teams.">
+    <title>Velocis | Performance-First Redis Consulting</title>
+    <link rel="icon" type="image/png" href="assets/favicon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@700;800&display=swap"
+        rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg fixed-top py-3">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center" href="index.html">
+                <img src="assets/logo.png" alt="Velocis Logo" height="30" class="d-inline-block align-text-top me-2">
+            </a>
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto align-items-center">
+                    <li class="nav-item"><a class="nav-link px-3" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link px-3 active" href="index-alt.html">Home 2</a></li>
+                    <li class="nav-item"><a class="nav-link px-3" href="about.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link px-3" href="services.html">Services</a></li>
+                    <li class="nav-item"><a class="nav-link px-3" href="portfolio.html">Portfolio</a></li>
+                    <li class="nav-item"><a class="nav-link px-3" href="contact.html">Contact</a></li>
+                    <li class="nav-item ms-lg-3 d-flex gap-2">
+                        <button id="theme-toggle" title="Toggle Theme">
+                            <i class="fas fa-moon"></i>
+                        </button>
+                        <button id="rtl-toggle" class="btn btn-outline-secondary btn-sm">RTL</button>
+                    </li>
+                    <li class="nav-item ms-lg-3 d-flex gap-2">
+                        <a href="login.html" class="btn btn-outline-primary">Login</a>
+                        <a href="dashboard.html" class="btn btn-premium">Dashboard</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Alternative Hero Section (Product/Dashboard Focus) -->
+    <header class="hero-section text-center pt-5 pb-0">
+        <div class="container pt-5">
+            <div class="row justify-content-center">
+                <div class="col-lg-10 hero-content">
+                    <span class="badge bg-primary-subtle text-primary mb-3 px-3 py-2 rounded-pill">New: Real-time
+                        Invalidation Tracking</span>
+                    <h1 class="hero-title mb-4">The Command Center for <span class="text-primary">Redis
+                            Excellence</span></h1>
+                    <p class="lead mb-5 opacity-75 mx-auto" style="max-width: 800px;">Stop treating your cache as a
+                        black box. Get deep-dive insights, automated optimization configs, and expert-led strategies in
+                        one platform.</p>
+                    <div class="d-flex justify-content-center gap-3 mb-5">
+                        <a href="signup.html" class="btn btn-premium btn-lg">Start Free Trial</a>
+                        <a href="dashboard.html" class="btn btn-outline-primary btn-lg">Live Demo</a>
+                    </div>
+                </div>
+                <div class="col-lg-12 mt-4 px-lg-5">
+                    <div class="glass-card p-2 border-bottom-0 rounded-bottom-0 shadow-lg animate-fade-up">
+                        <img src="assets/service_cluster.jpg"
+                            alt="Dashboard Preview" class="img-fluid rounded-top-4 shadow">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Key Metrics Section -->
+    <section class="py-5 bg-primary text-white">
+        <div class="container">
+            <div class="row g-4 text-center">
+                <div class="col-md-3">
+                    <h2 class="h1 fw-bold mb-0">500+</h2>
+                    <p class="opacity-75 mb-0">Clusters Optimized</p>
+                </div>
+                <div class="col-md-3">
+                    <h2 class="h1 fw-bold mb-0">99.9%</h2>
+                    <p class="opacity-75 mb-0">Average Hit Ratio</p>
+                </div>
+                <div class="col-md-3">
+                    <h2 class="h1 fw-bold mb-0">15ms</h2>
+                    <p class="opacity-75 mb-0">Average Latency</p>
+                </div>
+                <div class="col-md-3">
+                    <h2 class="h1 fw-bold mb-0">40%</h2>
+                    <p class="opacity-75 mb-0">Cost Reduction</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="py-5">
+        <div class="container py-5">
+            <div class="row align-items-center g-5">
+                <div class="col-lg-6">
+                    <div class="glass-card border-primary">
+                        <div class="d-flex gap-4 mb-4">
+                            <div class="bg-primary-subtle text-primary p-3 rounded-4">
+                                <i class="fas fa-microchip fa-2x"></i>
+                            </div>
+                            <div>
+                                <h4>Intelligent Eviction</h4>
+                                <p class="text-muted mb-0">Our algorithms predict key usage patterns to ensure your most
+                                    valuable data stays in memory.</p>
+                            </div>
+                        </div>
+                        <div class="d-flex gap-4 mb-4">
+                            <div class="bg-primary-subtle text-primary p-3 rounded-4">
+                                <i class="fas fa-shield-halved fa-2x"></i>
+                            </div>
+                            <div>
+                                <h4>Consistency First</h4>
+                                <p class="text-muted mb-0">Never serve stale data again. Implement event-driven
+                                    invalidation with zero overhead.</p>
+                            </div>
+                        </div>
+                        <div class="d-flex gap-4">
+                            <div class="bg-primary-subtle text-primary p-3 rounded-4">
+                                <i class="fas fa-bolt fa-2x"></i>
+                            </div>
+                            <div>
+                                <h4>Sub-millisecond Scale</h4>
+                                <p class="text-muted mb-0">Scale your clusters globally without compromising on the
+                                    speed Redis is known for.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <h2 class="h1 mb-4">Built by Redis Experts, for <span class="text-primary">Engineering
+                            Leaders</span></h2>
+                    <p class="lead text-muted mb-4">I’ve spent a decade scaling Redis for the world’s largest fintech
+                        and e-commerce platforms. Velocis is the culmination of that experience.</p>
+                    <ul class="list-unstyled mb-5">
+                        <li class="mb-3 d-flex align-items-center"><i class="fas fa-check-circle text-success me-3"></i>
+                            Enterprise-grade security audits</li>
+                        <li class="mb-3 d-flex align-items-center"><i class="fas fa-check-circle text-success me-3"></i>
+                            Custom Lua scripting for atomic operations</li>
+                        <li class="mb-3 d-flex align-items-center"><i class="fas fa-check-circle text-success me-3"></i>
+                            24/7 cluster health monitoring</li>
+                    </ul>
+                    <a href="about.html" class="btn btn-premium px-5 py-3">Learn My Story</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Integrations Section -->
+    <section class="py-5 bg-light-subtle">
+        <div class="container py-5 text-center">
+            <h2 class="h1 mb-5">Seamless Integration</h2>
+            <div class="row g-4 justify-content-center">
+                <div class="col-4 col-md-2">
+                    <div class="glass-card h-100 p-4">
+                        <i class="fab fa-node-js fa-3x text-success mb-3"></i>
+                        <h6 class="mb-0">Node.js</h6>
+                    </div>
+                </div>
+                <div class="col-4 col-md-2">
+                    <div class="glass-card h-100 p-4">
+                        <i class="fab fa-python fa-3x text-primary mb-3"></i>
+                        <h6 class="mb-0">Python</h6>
+                    </div>
+                </div>
+                <div class="col-4 col-md-2">
+                    <div class="glass-card h-100 p-4">
+                        <i class="fab fa-java fa-3x text-danger mb-3"></i>
+                        <h6 class="mb-0">Java</h6>
+                    </div>
+                </div>
+                <div class="col-4 col-md-2">
+                    <div class="glass-card h-100 p-4">
+                        <i class="fab fa-php fa-3x text-info mb-3"></i>
+                        <h6 class="mb-0">PHP</h6>
+                    </div>
+                </div>
+                <div class="col-4 col-md-2">
+                    <div class="glass-card h-100 p-4">
+                        <i class="fab fa-docker fa-3x text-primary mb-3"></i>
+                        <h6 class="mb-0">Docker</h6>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Live Performance Monitoring -->
+    <section class="py-5">
+        <div class="container py-5">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <h2 class="h1 mb-4">Real-time Performance Monitoring</h2>
+                    <p class="lead text-muted mb-4">Our proprietary dashboard gives you instant visibility into cluster
+                        health, memory fragmentation, and command latency.</p>
+                    <div class="glass-card p-4 mb-4 border-start border-4 border-primary">
+                        <h5 class="mb-2">Automated Alerting</h5>
+                        <p class="text-muted mb-0 small">Get notified before memory reaches 90% or when eviction rates
+                            spike unexpectedly.</p>
+                    </div>
+                    <a href="dashboard.html" class="btn btn-outline-primary rounded-pill px-4">View Live Demo</a>
+                </div>
+                <div class="col-lg-6 mt-5 mt-lg-0">
+                    <div class="glass-card h-100 p-0 overflow-hidden shadow">
+                        <div class="bg-dark p-2 d-flex gap-1">
+                            <div class="rounded-circle bg-danger" style="width: 8px; height: 8px;"></div>
+                            <div class="rounded-circle bg-warning" style="width: 8px; height: 8px;"></div>
+                            <div class="rounded-circle bg-success" style="width: 8px; height: 8px;"></div>
+                        </div>
+                        <div class="p-4 bg-light">
+                            <div class="d-flex justify-content-between mb-3">
+                                <span class="small fw-bold">Latency (ms)</span>
+                                <span class="badge bg-success">Healthy</span>
+                            </div>
+                            <div class="progress" style="height: 100px;">
+                                <div class="progress-bar" role="progressbar" style="width: 10%" aria-valuenow="10"
+                                    aria-valuemin="0" aria-valuemax="100"></div>
+                                <div class="progress-bar bg-info" role="progressbar" style="width: 20%"
+                                    aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"></div>
+                                <div class="progress-bar bg-warning" role="progressbar" style="width: 15%"
+                                    aria-valuenow="15" aria-valuemin="0" aria-valuemax="100"></div>
+                                <div class="progress-bar bg-primary" role="progressbar" style="width: 45%"
+                                    aria-valuenow="45" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Expert Team Section -->
+    <section class="py-5 bg-light-subtle">
+        <div class="container py-5">
+            <div class="text-center mb-5 section-title">
+                <h2 class="h1">Our Expert Team</h2>
+                <p class="text-muted mx-auto" style="max-width: 600px;">Meet the engineers who have built and scaled
+                    some of the world's most complex Redis infrastructures.</p>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="glass-card h-100 text-center p-5">
+                        <div class="rounded-circle overflow-hidden mx-auto mb-4" style="width: 120px; height: 120px; border: 4px solid var(--primary-color);">
+                            <img src="assets/team_alex.jpg" alt="Alex Rivera" class="img-fluid w-100 h-100 object-fit-cover">
+                        </div>
+                        <h4>Alex Rivera</h4>
+                        <p class="text-primary small mb-3">Lead Architect</p>
+                        <p class="text-muted small">Former Redis core contributor with 15 years of experience in
+                            distributed systems.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="glass-card h-100 text-center p-5">
+                        <div class="rounded-circle overflow-hidden mx-auto mb-4" style="width: 120px; height: 120px; border: 4px solid var(--primary-color);">
+                            <img src="assets/team_jamie.jpg" alt="Jamie Vance" class="img-fluid w-100 h-100 object-fit-cover">
+                        </div>
+                        <h4>Jamie Vance</h4>
+                        <p class="text-primary small mb-3">Performance Engineer</p>
+                        <p class="text-muted small">Specializes in memory optimization and custom Lua scripting for
+                            high-frequency trading.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="glass-card h-100 text-center p-5">
+                        <div class="rounded-circle overflow-hidden mx-auto mb-4" style="width: 120px; height: 120px; border: 4px solid var(--primary-color);">
+                            <img src="assets/team_li.jpg" alt="Li Wei" class="img-fluid w-100 h-100 object-fit-cover">
+                        </div>
+                        <h4>Li Wei</h4>
+                        <p class="text-primary small mb-3">Cloud Infrastructure</p>
+                        <p class="text-muted small">Expert in multi-cloud Redis deployments and automated failover
+                            strategies.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action Section -->
+    <section class="py-5">
+        <div class="container py-5 text-center">
+            <div class="glass-card bg-dark text-white p-5 rounded-4 shadow-lg">
+                <h2 class="h1 mb-4">Start Your Optimization Journey Today</h2>
+                <p class="lead mb-5 opacity-75">Don't let latency slow down your growth. Get a custom Redis roadmap in
+                    24 hours.</p>
+                <div class="d-flex justify-content-center gap-3">
+                    <a href="contact.html" class="btn btn-premium btn-lg px-5">Book Consultation</a>
+                    <a href="services.html" class="btn btn-outline-light btn-lg px-5">View Services</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row g-4 mb-5">
+                <div class="col-lg-4">
+                    <a class="navbar-brand mb-3 d-flex align-items-center" href="index.html">
+                        <img src="assets/logo.png" alt="Velocis Logo" height="30" class="me-2">
+                    </a>
+                    <p class="text-muted">High-performance Redis caching strategies for modern engineering teams.
+                        Scalable, consistent, and cost-effective.</p>
+                    <div class="d-flex gap-3">
+                        <a href="#" class="text-primary"><i class="fab fa-linkedin fa-lg"></i></a>
+                        <a href="#" class="text-primary"><i class="fab fa-github fa-lg"></i></a>
+                        <a href="#" class="text-primary"><i class="fab fa-twitter fa-lg"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 offset-lg-1">
+                    <h5>Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="index.html" class="text-decoration-none text-muted">Home</a></li>
+                        <li><a href="about.html" class="text-decoration-none text-muted">About</a></li>
+                        <li><a href="services.html" class="text-decoration-none text-muted">Services</a></li>
+                        <li><a href="portfolio.html" class="text-decoration-none text-muted">Portfolio</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2">
+                    <h5>Platform</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="dashboard.html" class="text-decoration-none text-muted">Dashboard</a></li>
+                        <li><a href="login.html" class="text-decoration-none text-muted">Login</a></li>
+                        <li><a href="signup.html" class="text-decoration-none text-muted">Sign Up</a></li>
+                        <li><a href="contact.html" class="text-decoration-none text-muted">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3">
+                    <h5>Contact</h5>
+                    <ul class="list-unstyled">
+                        <li class="text-muted mb-2"><i class="fas fa-envelope me-2"></i> hello@velocis.io</li>
+                        <li class="text-muted mb-2"><i class="fas fa-location-dot me-2"></i> Remote | Worldwide</li>
+                    </ul>
+                </div>
+            </div>
+            <hr>
+            <div class="text-center text-muted pt-4">
+                <small>&copy; 2026 Velocis. All rights reserved. Designed for performance.</small>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>
