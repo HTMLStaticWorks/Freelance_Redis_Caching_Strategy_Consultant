@@ -33,7 +33,7 @@
                     <li class="nav-item"><a class="nav-link px-3" href="services.html">Services</a></li>
                     <li class="nav-item"><a class="nav-link px-3 active" href="portfolio.html">Portfolio</a></li>
                     <li class="nav-item"><a class="nav-link px-3" href="contact.html">Contact</a></li>
-                    <li class="nav-item ms-lg-3 d-flex gap-2">
+                    <li class="nav-item ms-lg-3 d-flex gap-2 flex-nowrap">
                         <button id="theme-toggle" title="Toggle Theme">
                             <i class="fas fa-moon"></i>
                         </button>
@@ -169,32 +169,32 @@
             <h2 class="h1 text-center mb-5">Our Latest Deployments</h2>
             <div class="row g-4">
                 <div class="col-md-4">
-                    <div class="glass-card h-100 p-0 overflow-hidden hover-zoom text-center">
+                    <div class="glass-card h-100 p-0 overflow-hidden hover-zoom text-center d-flex flex-column">
                         <img src="assets/service_cluster.jpg"
                             alt="Cloud Cluster" class="img-fluid w-100" style="height: 200px; object-fit: cover;">
-                        <div class="p-4">
+                        <div class="p-4 flex-grow-1 d-flex flex-column justify-content-center">
                             <h5>Multi-Region Sentinel</h5>
-                            <p class="small text-muted">Global failover setup for a social media platform.</p>
+                            <p class="small text-muted mb-0">Global failover setup for a social media platform.</p>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-4">
-                    <div class="glass-card h-100 p-0 overflow-hidden hover-zoom text-center">
+                    <div class="glass-card h-100 p-0 overflow-hidden hover-zoom text-center d-flex flex-column">
                         <img src="assets/service_audit.jpg"
                             alt="Data Structure" class="img-fluid w-100" style="height: 200px; object-fit: cover;">
-                        <div class="p-4">
+                        <div class="p-4 flex-grow-1 d-flex flex-column justify-content-center">
                             <h5>HyperLogLog Analytics</h5>
-                            <p class="small text-muted">Tracking 10M+ daily unique visitors with minimal RAM.</p>
+                            <p class="small text-muted mb-0">Tracking 10M+ daily unique visitors with minimal RAM.</p>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-4">
-                    <div class="glass-card h-100 p-0 overflow-hidden hover-zoom text-center">
+                    <div class="glass-card h-100 p-0 overflow-hidden hover-zoom text-center d-flex flex-column">
                         <img src="assets/service_training.jpg"
                             alt="Optimization" class="img-fluid w-100" style="height: 200px; object-fit: cover;">
-                        <div class="p-4">
+                        <div class="p-4 flex-grow-1 d-flex flex-column justify-content-center">
                             <h5>Redis Streams Pipeline</h5>
-                            <p class="small text-muted">High-throughput message processing for logistics.</p>
+                            <p class="small text-muted mb-0">High-throughput message processing for logistics.</p>
                         </div>
                     </div>
                 </div>
@@ -206,11 +206,11 @@
     <section class="py-5">
         <div class="container py-5">
             <div class="row align-items-center g-5">
-                <div class="col-lg-6">
+                <div class="col-lg-6 text-center text-lg-start">
                     <h2 class="h1 mb-4">Live Performance Demo</h2>
                     <p class="text-muted mb-4">Watch how our optimized configurations handle massive traffic spikes
                         compared to default settings. We use real-world telemetry to show you the difference.</p>
-                    <div class="d-flex gap-3">
+                    <div class="d-flex flex-column flex-sm-row gap-3 justify-content-center justify-content-lg-start">
                         <a href="dashboard.html" class="btn btn-premium px-4">Launch Live Dashboard</a>
                         <a href="#" class="btn btn-outline-primary rounded-pill px-4"><i
                                 class="fas fa-play me-2"></i>Watch Video Demo</a>
@@ -253,19 +253,23 @@
             <h2 class="h1 text-center mb-5">Client Success Stories</h2>
             <div class="row g-4">
                 <div class="col-md-6">
-                    <div class="glass-card h-100 p-4 border-start border-4 border-primary">
+                    <div class="glass-card h-100 p-4 border-start border-4 border-primary text-center text-md-start d-flex flex-column">
                         <p class="lead mb-3">"The most professional Redis optimization service we've ever used. The
                             documentation alone saved our team months of work."</p>
-                        <h6 class="mb-0">David Miller</h6>
-                        <small class="text-muted">Head of Infrastructure, TechFlow</small>
+                        <div class="mt-auto">
+                            <h6 class="mb-0">David Miller</h6>
+                            <small class="text-muted">Head of Infrastructure, TechFlow</small>
+                        </div>
                     </div>
                 </div>
                 <div class="col-md-6">
-                    <div class="glass-card h-100 p-4 border-start border-4 border-primary">
+                    <div class="glass-card h-100 p-4 border-start border-4 border-primary text-center text-md-start d-flex flex-column">
                         <p class="lead mb-3">"Velocis doesn't just fix things; they teach you how to maintain the
                             performance. Highly recommended for any high-growth team."</p>
-                        <h6 class="mb-0">Emma Thompson</h6>
-                        <small class="text-muted">Engineering Manager, DataScale</small>
+                        <div class="mt-auto">
+                            <h6 class="mb-0">Emma Thompson</h6>
+                            <small class="text-muted">Engineering Manager, DataScale</small>
+                        </div>
                     </div>
                 </div>
             </div>

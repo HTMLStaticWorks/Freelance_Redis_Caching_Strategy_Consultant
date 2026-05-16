@@ -79,7 +79,7 @@ document.addEventListener('DOMContentLoaded', () => {
         performanceChart.data.datasets[1].data.shift();
         performanceChart.data.datasets[1].data.push(Math.random() * 1 + 1);
         performanceChart.update('none');
-    }, 3000);
+    }, 8000);
 
     // Memory Pie Chart
     const memoryCtx = document.getElementById('memoryPieChart').getContext('2d');
@@ -128,7 +128,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (logFeed.children.length > 20) {
             logFeed.removeChild(logFeed.lastChild);
         }
-    }, 4000);
+    }, 10000);
 
     // Invalidation Pattern Toggle
     const patternSelect = document.getElementById('patternSelect');
@@ -191,7 +191,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 // Close sidebar on mobile after clicking
                 if (window.innerWidth <= 1100) {
                     sidebar.classList.remove('show');
-                    sidebarToggle.querySelector('i').classList.replace('fa-times', 'fa-bars');
                 }
             }
         });
@@ -314,22 +313,23 @@ document.addEventListener('DOMContentLoaded', () => {
             if (fullLogFeed.children.length > 50) {
                 fullLogFeed.removeChild(fullLogFeed.lastChild);
             }
-        }, 2000);
+        }, 6000);
     }
 
     // Mobile Sidebar Toggle
     const sidebarToggle = document.getElementById('sidebar-mobile-toggle');
+    const sidebarClose = document.getElementById('sidebar-close');
     const sidebar = document.querySelector('.sidebar');
 
     if (sidebarToggle && sidebar) {
         sidebarToggle.addEventListener('click', () => {
             sidebar.classList.toggle('show');
-            const icon = sidebarToggle.querySelector('i');
-            if (sidebar.classList.contains('show')) {
-                icon.classList.replace('fa-bars', 'fa-times');
-            } else {
-                icon.classList.replace('fa-times', 'fa-bars');
-            }
+        });
+    }
+
+    if (sidebarClose && sidebar) {
+        sidebarClose.addEventListener('click', () => {
+            sidebar.classList.remove('show');
         });
     }
 
@@ -340,7 +340,6 @@ document.addEventListener('DOMContentLoaded', () => {
             !sidebar.contains(e.target) && 
             !sidebarToggle.contains(e.target)) {
             sidebar.classList.remove('show');
-            sidebarToggle.querySelector('i').classList.replace('fa-times', 'fa-bars');
         }
     });
 });

@@ -8,6 +8,7 @@
     <link rel="icon" type="image/png" href="assets/favicon.png">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
     <link rel="stylesheet" href="css/style.css">
 </head>
 
@@ -33,7 +34,7 @@
                     <li class="nav-item"><a class="nav-link px-3" href="services.html">Services</a></li>
                     <li class="nav-item"><a class="nav-link px-3" href="portfolio.html">Portfolio</a></li>
                     <li class="nav-item"><a class="nav-link px-3 active" href="contact.html">Contact</a></li>
-                    <li class="nav-item ms-lg-3 d-flex gap-2">
+                    <li class="nav-item ms-lg-3 d-flex gap-2 flex-nowrap">
                         <button id="theme-toggle" title="Toggle Theme">
                             <i class="fas fa-moon"></i>
                         </button>
@@ -62,10 +63,10 @@
         <div class="container">
             <div class="row g-5">
                 <div class="col-lg-5">
-                    <div class="glass-card h-100">
+                    <div class="glass-card h-100 text-center text-lg-start">
                         <h3 class="mb-4">Get in Touch</h3>
-                        <div class="d-flex align-items-center mb-4">
-                            <div class="icon-box bg-primary-subtle text-primary me-3">
+                        <div class="d-flex flex-column flex-lg-row align-items-center justify-content-center justify-content-lg-start mb-4">
+                            <div class="icon-box bg-primary-subtle text-primary mb-3 mb-lg-0 me-lg-3">
                                 <i class="fas fa-envelope"></i>
                             </div>
                             <div>
@@ -73,8 +74,8 @@
                                 <p class="text-muted mb-0">hello@velocis.io</p>
                             </div>
                         </div>
-                        <div class="d-flex align-items-center mb-4">
-                            <div class="icon-box bg-primary-subtle text-primary me-3">
+                        <div class="d-flex flex-column flex-lg-row align-items-center justify-content-center justify-content-lg-start mb-4">
+                            <div class="icon-box bg-primary-subtle text-primary mb-3 mb-lg-0 me-lg-3">
                                 <i class="fas fa-calendar-check"></i>
                             </div>
                             <div>
@@ -82,8 +83,8 @@
                                 <p class="text-muted mb-0">Book a free 15-min intro</p>
                             </div>
                         </div>
-                        <div class="d-flex align-items-center mb-5">
-                            <div class="icon-box bg-primary-subtle text-primary me-3">
+                        <div class="d-flex flex-column flex-lg-row align-items-center justify-content-center justify-content-lg-start mb-5">
+                            <div class="icon-box bg-primary-subtle text-primary mb-3 mb-lg-0 me-lg-3">
                                 <i class="fas fa-location-dot"></i>
                             </div>
                             <div>
@@ -93,7 +94,7 @@
                         </div>
 
                         <h5>Follow the Work</h5>
-                        <div class="d-flex gap-3 mt-3">
+                        <div class="d-flex gap-3 mt-3 justify-content-center justify-content-lg-start">
                             <a href="#" class="social-btn"><i class="fab fa-linkedin-in"></i></a>
                             <a href="#" class="social-btn"><i class="fab fa-github"></i></a>
                             <a href="#" class="social-btn"><i class="fab fa-twitter"></i></a>
@@ -227,17 +228,8 @@
     <section class="py-5">
         <div class="container py-5">
             <h2 class="h1 text-center mb-5">Our Global Presence</h2>
-            <div class="glass-card p-0 overflow-hidden shadow-lg" style="height: 450px; position: relative;">
-                <!-- Placeholder for Interactive Map (e.g., Leaflet or Google Maps) -->
-                <div class="w-100 h-100 bg-light d-flex align-items-center justify-content-center"
-                    style="background-image: url('assets/contact_map.jpg'); background-size: cover; background-position: center;">
-                    <div class="bg-white p-4 rounded-4 shadow text-center" style="max-width: 300px;">
-                        <i class="fas fa-map-marker-alt text-primary fa-3x mb-3"></i>
-                        <h5>Interactive Map</h5>
-                        <p class="small text-muted mb-0">Explore our regional hubs and engineering centers worldwide.
-                        </p>
-                    </div>
-                </div>
+            <div class="glass-card p-0 overflow-hidden shadow-lg" style="height: 450px; position: relative; z-index: 1;">
+                <div id="map" style="width: 100%; height: 100%;"></div>
             </div>
         </div>
     </section>
@@ -254,10 +246,12 @@
                         <h4>London Hub</h4>
                         <p class="text-muted small mb-4">Our primary European engineering center, specializing in
                             high-frequency trading optimizations.</p>
-                        <ul class="list-unstyled small text-muted">
-                            <li class="mb-2"><i class="fas fa-phone me-2 text-primary"></i> +44 20 7946 0000</li>
-                            <li><i class="fas fa-clock me-2 text-primary"></i> 09:00 - 18:00 GMT</li>
-                        </ul>
+                        <div class="mt-auto">
+                            <ul class="list-unstyled small text-muted mb-0">
+                                <li class="mb-2"><i class="fas fa-phone me-2 text-primary"></i> +44 20 7946 0000</li>
+                                <li><i class="fas fa-clock me-2 text-primary"></i> 09:00 - 18:00 GMT</li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
                 <div class="col-md-4">
@@ -267,10 +261,12 @@
                         <h4>New York Hub</h4>
                         <p class="text-muted small mb-4">Specialized in large-scale e-commerce caching and multi-region
                             replication strategies.</p>
-                        <ul class="list-unstyled small text-muted">
-                            <li class="mb-2"><i class="fas fa-phone me-2 text-primary"></i> +1 212 555 0123</li>
-                            <li><i class="fas fa-clock me-2 text-primary"></i> 09:00 - 18:00 EST</li>
-                        </ul>
+                        <div class="mt-auto">
+                            <ul class="list-unstyled small text-muted mb-0">
+                                <li class="mb-2"><i class="fas fa-phone me-2 text-primary"></i> +1 212 555 0123</li>
+                                <li><i class="fas fa-clock me-2 text-primary"></i> 09:00 - 18:00 EST</li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
                 <div class="col-md-4">
@@ -280,10 +276,12 @@
                         <h4>Singapore Hub</h4>
                         <p class="text-muted small mb-4">Our APAC center for real-time analytics and mobile application
                             performance tuning.</p>
-                        <ul class="list-unstyled small text-muted">
-                            <li class="mb-2"><i class="fas fa-phone me-2 text-primary"></i> +65 6789 0123</li>
-                            <li><i class="fas fa-clock me-2 text-primary"></i> 09:00 - 18:00 SGT</li>
-                        </ul>
+                        <div class="mt-auto">
+                            <ul class="list-unstyled small text-muted mb-0">
+                                <li class="mb-2"><i class="fas fa-phone me-2 text-primary"></i> +65 6789 0123</li>
+                                <li><i class="fas fa-clock me-2 text-primary"></i> 09:00 - 18:00 SGT</li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -295,19 +293,16 @@
         <div class="container py-5">
             <div class="glass-card bg-primary text-white p-5 rounded-4 shadow-lg overflow-hidden position-relative">
                 <div class="row align-items-center position-relative z-1">
-                    <div class="col-lg-8">
+                    <div class="col-lg-8 text-center text-lg-start">
                         <h2 class="h1 mb-3">24/7 Enterprise Support</h2>
-                        <p class="lead mb-0 opacity-75">For enterprise clients, we offer around-the-clock emergency
+                        <p class="lead mb-0 opacity-100">For enterprise clients, we offer around-the-clock emergency
                             support and proactive monitoring. Our team is always ready to jump in.</p>
                     </div>
-                    <div class="col-lg-4 text-lg-end mt-4 mt-lg-0">
+                    <div class="col-lg-4 text-center text-lg-end mt-4 mt-lg-0">
                         <a href="signup.html" class="btn btn-light btn-lg rounded-pill px-5 fw-bold text-primary">View
                             SLA Plans</a>
                     </div>
                 </div>
-                <!-- Background decor -->
-                <div class="position-absolute top-0 start-0 w-100 h-100 opacity-10"
-                    style="background: radial-gradient(circle at 10% 90%, white 0%, transparent 60%);"></div>
             </div>
         </div>
     </section>
@@ -362,6 +357,37 @@
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initialize the map
+            const map = L.map('map').setView([20, 0], 2); // Center on world
+
+            // Add OpenStreetMap tiles
+            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+            }).addTo(map);
+
+            // Define locations for markers
+            const locations = [
+                { name: "London Hub", coords: [51.505, -0.09], description: "European Engineering Center" },
+                { name: "New York Hub", coords: [40.7128, -74.0060], description: "US Performance Center" },
+                { name: "Singapore Hub", coords: [1.3521, 103.8198], description: "APAC Analytics Center" }
+            ];
+
+            // Add markers with popups
+            locations.forEach(loc => {
+                L.marker(loc.coords)
+                    .addTo(map)
+                    .bindPopup(`<b>${loc.name}</b><br>${loc.description}`);
+            });
+
+            // Adjust map size on container resize (optional but good for responsive)
+            setTimeout(() => {
+                map.invalidateSize();
+            }, 100);
+        });
+    </script>
     <script src="js/main.js"></script>
 </body>
 
