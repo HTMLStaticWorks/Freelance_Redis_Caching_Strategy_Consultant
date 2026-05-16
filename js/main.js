@@ -68,12 +68,24 @@ document.addEventListener('DOMContentLoaded', () => {
     // Navbar scroll effect
     window.addEventListener('scroll', () => {
         const navbar = document.querySelector('.navbar');
+        const authHeader = document.querySelector('.auth-header');
+        
         if (window.scrollY > 50) {
-            navbar.style.padding = '10px 0';
-            navbar.style.boxShadow = '0 5px 20px rgba(0,0,0,0.1)';
+            if (navbar) {
+                navbar.style.padding = '10px 0';
+                navbar.style.boxShadow = '0 5px 20px rgba(0,0,0,0.1)';
+            }
+            if (authHeader) {
+                authHeader.classList.add('scrolled');
+            }
         } else {
-            navbar.style.padding = '20px 0';
-            navbar.style.boxShadow = 'none';
+            if (navbar) {
+                navbar.style.padding = '20px 0';
+                navbar.style.boxShadow = 'none';
+            }
+            if (authHeader) {
+                authHeader.classList.remove('scrolled');
+            }
         }
     });
 
