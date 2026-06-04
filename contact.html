@@ -6,6 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact | Velocis Redis Caching</title>
     <link rel="icon" type="image/png" href="assets/favicon.png">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@700;800&display=swap" rel="stylesheet">
+
+    <!-- Bootstrap 5 CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
@@ -49,7 +56,7 @@
         </div>
     </nav>
 
-    <header class="hero-section py-5">
+    <header class="hero-section">
         <div class="container py-5">
             <div class="text-center section-title">
                 <h1 class="display-4 fw-bold">Let's Scale Together</h1>
@@ -65,31 +72,33 @@
                 <div class="col-lg-5">
                     <div class="glass-card h-100 text-center text-lg-start">
                         <h3 class="mb-4">Get in Touch</h3>
-                        <div class="d-flex flex-column flex-lg-row align-items-center justify-content-center justify-content-lg-start mb-4">
-                            <div class="icon-box bg-primary-subtle text-primary mb-3 mb-lg-0 me-lg-3">
-                                <i class="fas fa-envelope"></i>
+                        <div class="d-inline-block text-start" style="width: fit-content;">
+                            <div class="d-flex align-items-center justify-content-start mb-4">
+                                <div class="icon-box bg-primary-subtle text-primary me-3">
+                                    <i class="fas fa-envelope"></i>
+                                </div>
+                                <div>
+                                    <h6 class="mb-0">Email</h6>
+                                    <p class="text-muted mb-0">hello@velocis.io</p>
+                                </div>
                             </div>
-                            <div>
-                                <h6 class="mb-0">Email</h6>
-                                <p class="text-muted mb-0">hello@velocis.io</p>
+                            <div class="d-flex align-items-center justify-content-start mb-4">
+                                <div class="icon-box bg-primary-subtle text-primary me-3">
+                                    <i class="fas fa-calendar-check"></i>
+                                </div>
+                                <div>
+                                    <h6 class="mb-0">Discovery Call</h6>
+                                    <p class="text-muted mb-0">Book a free 15-min intro</p>
+                                </div>
                             </div>
-                        </div>
-                        <div class="d-flex flex-column flex-lg-row align-items-center justify-content-center justify-content-lg-start mb-4">
-                            <div class="icon-box bg-primary-subtle text-primary mb-3 mb-lg-0 me-lg-3">
-                                <i class="fas fa-calendar-check"></i>
-                            </div>
-                            <div>
-                                <h6 class="mb-0">Discovery Call</h6>
-                                <p class="text-muted mb-0">Book a free 15-min intro</p>
-                            </div>
-                        </div>
-                        <div class="d-flex flex-column flex-lg-row align-items-center justify-content-center justify-content-lg-start mb-5">
-                            <div class="icon-box bg-primary-subtle text-primary mb-3 mb-lg-0 me-lg-3">
-                                <i class="fas fa-location-dot"></i>
-                            </div>
-                            <div>
-                                <h6 class="mb-0">Location</h6>
-                                <p class="text-muted mb-0">Remote | Worldwide</p>
+                            <div class="d-flex align-items-center justify-content-start mb-5">
+                                <div class="icon-box bg-primary-subtle text-primary me-3">
+                                    <i class="fas fa-location-dot"></i>
+                                </div>
+                                <div>
+                                    <h6 class="mb-0">Location</h6>
+                                    <p class="text-muted mb-0">Remote | Worldwide</p>
+                                </div>
                             </div>
                         </div>
 
@@ -184,8 +193,8 @@
                             </h2>
                             <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
                                 <div class="accordion-body text-muted">
-                                    Security is paramount. We follow strict NDAs, use read-only access where possible,
-                                    and never store your sensitive data on our systems. All audits are performed within
+                                    Security is paramount. I follow strict NDAs, use read-only access where possible,
+                                    and never store your sensitive data on my systems. All audits are performed within
                                     your secure perimeter.
                                 </div>
                             </div>
@@ -199,7 +208,7 @@
                             </h2>
                             <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
                                 <div class="accordion-body text-muted">
-                                    Absolutely. We specialize in zero-downtime migrations using replication-based
+                                    Absolutely. I specialize in zero-downtime migrations using replication-based
                                     strategies to ensure your applications stay online throughout the transition.
                                 </div>
                             </div>
@@ -213,7 +222,7 @@
                             </h2>
                             <div id="faq5" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
                                 <div class="accordion-body text-muted">
-                                    Yes, we offer tailored workshops ranging from Redis fundamentals to advanced
+                                    Yes, I offer tailored workshops ranging from Redis fundamentals to advanced
                                     architecture patterns and operational best practices for your specific use cases.
                                 </div>
                             </div>
@@ -227,7 +236,7 @@
     <!-- Interactive Map Section -->
     <section class="py-5">
         <div class="container py-5">
-            <h2 class="h1 text-center mb-5">Our Global Presence</h2>
+            <h2 class="text-center mb-5">Available Worldwide</h2>
             <div class="glass-card p-0 overflow-hidden shadow-lg" style="height: 450px; position: relative; z-index: 1;">
                 <div id="map" style="width: 100%; height: 100%;"></div>
             </div>
@@ -237,14 +246,14 @@
     <!-- Location Cards Section -->
     <section class="py-5 bg-light-subtle">
         <div class="container py-5">
-            <h2 class="h1 text-center mb-5">Our Regional Hubs</h2>
+            <h2 class="text-center mb-5">Timezones I Cover</h2>
             <div class="row g-4">
                 <div class="col-md-4">
                     <div class="glass-card h-100 p-4">
                         <img src="assets/hub_london.jpg"
                             alt="London" class="img-fluid rounded-3 mb-4">
                         <h4>London Hub</h4>
-                        <p class="text-muted small mb-4">Our primary European engineering center, specializing in
+                        <p class="text-muted small mb-4">Serving European clients and specializing in
                             high-frequency trading optimizations.</p>
                         <div class="mt-auto">
                             <ul class="list-unstyled small text-muted mb-0">
@@ -274,7 +283,7 @@
                         <img src="assets/hub_singapore.jpg"
                             alt="Singapore" class="img-fluid rounded-3 mb-4">
                         <h4>Singapore Hub</h4>
-                        <p class="text-muted small mb-4">Our APAC center for real-time analytics and mobile application
+                        <p class="text-muted small mb-4">Serving APAC clients with real-time analytics and mobile application
                             performance tuning.</p>
                         <div class="mt-auto">
                             <ul class="list-unstyled small text-muted mb-0">
@@ -294,9 +303,9 @@
             <div class="glass-card bg-primary text-white p-5 rounded-4 shadow-lg overflow-hidden position-relative">
                 <div class="row align-items-center position-relative z-1">
                     <div class="col-lg-8 text-center text-lg-start">
-                        <h2 class="h1 mb-3">24/7 Enterprise Support</h2>
-                        <p class="lead mb-0 opacity-100">For enterprise clients, we offer around-the-clock emergency
-                            support and proactive monitoring. Our team is always ready to jump in.</p>
+                        <h2 class="mb-3">24/7 Enterprise Support</h2>
+                        <p class="lead mb-0 opacity-100">For enterprise clients, I offer around-the-clock emergency
+                            support and proactive monitoring. I am always ready to jump in.</p>
                     </div>
                     <div class="col-lg-4 text-center text-lg-end mt-4 mt-lg-0">
                         <a href="signup.html" class="btn btn-light btn-lg rounded-pill px-5 fw-bold text-primary">View
